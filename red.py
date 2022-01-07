@@ -3,11 +3,9 @@ import time
 import sys
 
 led.CONTROLLER_IP = sys.argv[1]
-
-# Set rainbow color animation
-led.change_mixed_colors_animation(0x1)
+led.change_color("#FF0000")
 time.sleep(0.3)
-led.change_speed(0)
+led.change_mono_color_animation(0xd3)
 time.sleep(0.3)
-led.change_brightness(200)
+led.change_brightness(255)
 time.sleep(0.3)
