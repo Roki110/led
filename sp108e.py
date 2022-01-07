@@ -2,7 +2,7 @@
 import socket
 import binascii
 
-CONTROLLER_IP = "192.168.99.52"
+CONTROLLER_IP = "0.0.0.0"
 CONTROLLER_PORT = 8189
 
 mono_animations = {
