@@ -1,4 +1,5 @@
 import sp108e as led
+import sys
 
-led.CONTROLLER_IP="192.168.99.54"
+led.CONTROLLER_IP = sys.argv[1]
 led.toggle_off_on()
