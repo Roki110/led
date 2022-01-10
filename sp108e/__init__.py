@@ -6,6 +6,10 @@ CONTROLLER_IP = "0.0.0.0"
 CONTROLLER_PORT = 8189
 
 mono_animations = {
+    # custom name
+    "rainbow": "00",
+    "orangina": "87",
+    # standard name
 	"meteor" : "cd",
 	"breathing" : "ce",
 	"wave" : "d1",

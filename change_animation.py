@@ -24,6 +24,10 @@ def main(ip: str, value: str):
     time.sleep(0.3)
     settings = led.get_device_settings()
     animation = settings['current_animation']
+    try:
+        animation = int.from_bytes(binascii.unhexlify(animation),byteorder='little', signed=False)
+    except Exception as b:
+        pass
     f = open(os.path.dirname(__file__) + "/set.txt","wt")
     print(animation, file=f)
     f.close()
