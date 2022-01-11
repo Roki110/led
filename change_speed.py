@@ -1,6 +1,6 @@
 import sp108e as led
-import time
 import sys
+
 
 def main(ip: str, value: str):
     led.CONTROLLER_IP = ip
@@ -26,4 +26,3 @@ if __name__ == '__main__':
         print("      192.168.0.32 200   : set speed to 200")
         exit(1)
     main(sys.argv[1], sys.argv[2])
-

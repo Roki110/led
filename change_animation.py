@@ -4,13 +4,14 @@ import sys
 import binascii
 import os
 
+
 def main(ip: str, value: str):
     led.CONTROLLER_IP = ip
     anim = value
     current_anim = int(anim)
     raw_settings = led.get_device_raw_settings()
     if anim[0] == "-" or anim[0] == '+':
-        current_anim += int.from_bytes(binascii.unhexlify(raw_settings[4:6]),byteorder='little', signed=False)
+        current_anim += int.from_bytes(binascii.unhexlify(raw_settings[4:6]), byteorder='little', signed=False)
         if current_anim < 0:
             current_anim = 0xb3
         if current_anim > 212:
@@ -19,16 +20,16 @@ def main(ip: str, value: str):
             if anim[0] == "-":
                 current_anim = 212
             else:
-                current_anim= 0
+                current_anim = 0
     led.change_mono_color_animation(current_anim)
     time.sleep(0.3)
     settings = led.get_device_settings()
     animation = settings['current_animation']
     try:
-        animation = int.from_bytes(binascii.unhexlify(animation),byteorder='little', signed=False)
+        animation = int.from_bytes(binascii.unhexlify(animation), byteorder='little', signed=False)
     except Exception as b:
         pass
-    f = open(os.path.dirname(__file__) + "/set.txt","wt")
+    f = open(os.path.dirname(__file__) + "/set.txt", "wt")
     print(animation, file=f)
     f.close()
 

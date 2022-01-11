@@ -1,20 +1,20 @@
 import sp108e as led
-import time
 import sys
 
 
-def main(ip: str, value: str):    
+def main(ip: str, value: str):
     led.CONTROLLER_IP = ip
     strBright = value
     bright = int(float(strBright))
     if strBright[0] == "+" or strBright[0] == "-":
-        bright +=  led.get_device_settings()['current_brightness']
-    if bright < 0 :
+        bright += led.get_device_settings()['current_brightness']
+    if bright < 0:
         bright = 0
     elif bright > 255:
         bright = 255
     led.change_brightness(bright)
     print(f"Brightness changed to {bright} for SP108E at {led.CONTROLLER_IP}")
+
 
 if __name__ == '__main__':
     if sys.argv.__len__() != 3:
