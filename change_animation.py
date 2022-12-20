@@ -37,7 +37,7 @@ def main(ip: str, value: str):
 if __name__ == '__main__':
     if sys.argv.__len__() != 3:
         print("Incorrect number of arguments")
-        print("   args: Ip_address animation(0-179 multi color anim, 205-219 mono color anim)")
+        print("   args: Ip_address animation(0-179 multi color anim, 205-212 mono color anim)")
         print("   examples:")
         print("      192.168.0.32 +1   : Set to next animation")
         print("      192.168.0.32 -1   : Set to previous animation")

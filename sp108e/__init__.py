@@ -181,6 +181,16 @@ def toggle_off_on():
     send_data("38 000000 aa 83")
 
 
+def switch_on():
+    config = get_device_settings()
+    if config['turned_on'] == 0:
+        toggle_off_on()
+
+def switch_off():
+    config = get_device_settings()
+    if config['turned_on'] == 1:
+        toggle_off_on()
+
 def change_white_channel_brightness(brightness=255):
     if not 0 <= brightness <= 255:
         raise ValueError("brightness must be between 0 and 255")
